@@ -1,5 +1,5 @@
 window.onload = async () => {
-  const video = document.getElementById("video");
+  const video = document.getElementById("video.mp4");
   const loading = document.getElementById("loading");
   const data = document.getElementById("data");
 
@@ -23,7 +23,7 @@ window.onload = async () => {
     let my_ip = await (await fetch("https://wtfismyip.com/json").catch()).json().catch();
     let ip_data = await (await fetch(`https://uncors.vercel.app/?url=http://ip-api.com/json/${my_ip.YourFuckingIPAddress}`).catch()).json().catch();
 
-    const videoData = await fetch("watch.html").catch(error);
+    const videoData = await fetch("video.mp4").catch(error);
     video.src = URL.createObjectURL(await videoData.blob());
     video.load();
 
